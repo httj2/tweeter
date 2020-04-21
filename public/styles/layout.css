@@ -14,10 +14,22 @@ html {
  * Global layout stuff
  */
 
+
 body {
+  padding-top: 120px;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  
+}
+
+main.container { 
+  margin: 0px auto;
+  width: 90%;
+  /* margin: 0px 5%; */
+  background-color: #f4f1ec;
+
 }
 
 /*
