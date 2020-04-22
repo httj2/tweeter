@@ -32,6 +32,68 @@ main.container {
 
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Tweet Container */
+#tweets-container {
+  margin-top: 80px;
+}
+
+#tweets-container .tweet:hover{
+  box-shadow: 8px 8px #D2D6E5;
+}
+.tweet:hover .username {
+  display:block;
+}
+
+header p.username { 
+  display: none;
+  margin-left: auto;
+  color:#D2D6E5;
+  font-weight: bold;
+}
+article.tweet {
+  border: 3px black solid;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+article.tweet header{
+  background: none;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  padding: 20px 15px;
+}
+
+header i.fa-smile-beam {
+  padding-right: 10px;
+  font-size: 40px;
+}
+
+.tweetContext {
+  font-size: 25px; 
+  font-weight: 300;
+  padding: 10px;
+}
+
+
+
+
+#tweets-container footer {
+  display: flex;
+  flex-direction: row;
+  border-top: 3px solid black;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#tweets-container footer p {
+  margin: 0;
+  padding: 0;
+}
+#tweets-container .icons {
+  margin-left: auto;
+  color: #4056A1;
+}
+.icons i { 
+  margin-right: 10px;
+}
