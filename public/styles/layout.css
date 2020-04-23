@@ -73,6 +73,7 @@ header .avatar {
   font-size: 25px; 
   font-weight: 300;
   padding: 10px;
+  word-break: break-word;
 }
 
 
