@@ -40,38 +40,37 @@ const loadTweets = function () {
   })
 };
 
+const formValidation = function () {
+  let text = $('#tweet-text');
+  // console.log(text);
+  if (text.val().length > 140) {
+      alert('Too many characters');
+      text.focus()
+      return false;
+  } else if (!text.val()) {
+      alert('Please write something before submitting')
+      text.focus();
+      return false;
+  }
+  return true; 
+}
+
+
 
 $(document).ready(function() {
   loadTweets();
-
+  
   $('#tweetForm').submit(function (event) {
     event.preventDefault();
-    
-    //information from the server 
     let text = $('#tweet-text').val()
-    console.log(text);
-    $.ajax( {
-        url: `/tweets`,
-        method: "POST",
-        data: { text }
-      })
-      .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
+    if (formValidation() === true) {
+      $.ajax( {
+          url: `/tweets`,
+          method: "POST",
+          data: { text }
+        })
+        .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
+    }   
   });
-
-  
-  
-  const formValidation = function (text) {
-    if (text.val().length > 140) {
-        alert('Too many characters');
-        text.focus()
-        return false;
-        
-    } else if (!text) {
-        alert('Please write something before submitting')
-        return false;
-    }
-    return true; 
-}
-  
 
 });
