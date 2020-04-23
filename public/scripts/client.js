@@ -1,7 +1,5 @@
  const createTweetElement = function(tweetObject) {
-  console.log(tweetObject);
-  console.log(tweetObject.user);
-  console.log(tweetObject.user.avatars)
+
   let $tweet = $('<article>').addClass('tweet');
   // --------Header Elements-----------//
   const $header = $(`<header>`); 
@@ -62,6 +60,15 @@ $(document).ready(function() {
   });
 
   
+  
+  const formValidation = function (text) {
+    if (text.val().length > 140) {
+        alert('Too many characters');
+        text.preventDefault();
+    } else if (!text) {
+        alert('Please write something before submitting')
+    }
+}
   
 
 });
