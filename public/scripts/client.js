@@ -42,7 +42,6 @@ const loadTweets = function () {
 
 const formValidation = function () {
   let text = $('#tweet-text');
-  // console.log(text);
   if (text.val().length > 140) {
       alert('Too many characters');
       text.focus()
@@ -51,8 +50,8 @@ const formValidation = function () {
       alert('Please write something before submitting')
       text.focus();
       return false;
-  }
-  return true; 
+  } 
+    return true; 
 }
 
 
@@ -70,7 +69,7 @@ $(document).ready(function() {
           data: { text }
         })
         .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
-    }   
+    }
+    $('#tweet-text').val('');
   });
-
 });
