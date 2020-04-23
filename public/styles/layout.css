@@ -61,12 +61,12 @@ article.tweet header{
   display: flex;
   flex-direction: row;
   height: 20px;
-  padding: 20px 15px;
+  padding: 40px 15px;
 }
 
-header i.fa-smile-beam {
+header .avatar {
   padding-right: 10px;
-  font-size: 40px;
+  height: 50px;
 }
 
 .tweetContext {
@@ -86,9 +86,9 @@ header i.fa-smile-beam {
   font-size: 15px;
 }
 
-#tweets-container footer p {
+footer .date {
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
 }
 #tweets-container .icons {
   margin-left: auto;
