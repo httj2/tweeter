@@ -43,15 +43,21 @@ const loadTweets = function () {
 const formValidation = function () {
   let text = $('#tweet-text');
   if (text.val().length > 140) {
-      alert('Too many characters');
-      text.focus()
-      return false;
+    $('div.error').slideDown("fast", function(){
+      $( this ).html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Too many characters, please revise!</span><i class="fas fa-exclamation-triangle"></i>')
+    });
+    text.focus()
+    return false;
   } else if (!text.val()) {
-      alert('Please write something before submitting')
+    $('div.error').slideDown("fast", function(){
+      $( this )
+      .html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Please enter something!!</span><i class="fas fa-exclamation-triangle"></i>')
+    });
       text.focus();
       return false;
   } 
-    return true; 
+  $('div.error').slideUp(400);
+  return true; 
 }
 
 
@@ -68,8 +74,8 @@ $(document).ready(function() {
           method: "POST",
           data: { text }
         })
-        .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
-    }
-    $('#tweet-text').val('');
+      .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')});
+     $('#tweet-text').val('');
+    } 
   });
 });
