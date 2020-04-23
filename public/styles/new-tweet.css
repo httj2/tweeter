@@ -1,8 +1,9 @@
 .new-tweet {
-  margin-top: 50px;
   padding: 10px;
 }
-
+#tweetForm{
+  margin-top: 50px;
+}
 .new-tweet label {
   width: 100%;
   font-weight: 700;
@@ -37,3 +38,11 @@
   color: red;
 }
 
+.error{
+  border: 3px solid red;
+  padding: 10px;
+  display: none;
+}
+.errorMsg {
+  padding: 0px 8px;
+}
