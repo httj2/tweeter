@@ -1,5 +1,4 @@
  const createTweetElement = function(tweetObject) {
-
   let $tweet = $('<article>').addClass('tweet');
   // --------Header Elements-----------//
   const $header = $(`<header>`); 
@@ -56,7 +55,7 @@ $(document).ready(function() {
         method: "POST",
         data: { text }
       })
-      .then((tweet) => {createTweetElement(tweet).appendTo('#tweets-container')})
+      .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
   });
 
   
@@ -64,10 +63,14 @@ $(document).ready(function() {
   const formValidation = function (text) {
     if (text.val().length > 140) {
         alert('Too many characters');
-        text.preventDefault();
+        text.focus()
+        return false;
+        
     } else if (!text) {
         alert('Please write something before submitting')
+        return false;
     }
+    return true; 
 }
   
 
