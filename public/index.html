@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -34,12 +34,12 @@
     <script src="https://kit.fontawesome.com/523d1ccf50.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body class = "clearfix">
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="clearfix">
       <span>tweeter</span>
     </nav>
-    <header class = 'profileHeader'>
+    <header class="profileHeader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -52,6 +52,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">  
       <section class="new-tweet">
+        <div class="red error">
+        </div>
         <h2>Compose Tweet</h2>
         <form action='/tweets' method='POST' id='tweetForm'>
           <label for="tweet-text">What are you humming about?</label>

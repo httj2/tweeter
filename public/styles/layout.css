@@ -51,7 +51,7 @@ header p.username {
   font-weight: bold;
 }
 article.tweet {
-  border: 3px black solid;
+  border: 3px #545149 solid;
   padding: 10px;
   margin: 20px 0;
 }
@@ -60,29 +60,26 @@ article.tweet header{
   background: none;
   display: flex;
   flex-direction: row;
-  height: 20px;
-  padding: 40px 15px;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 header .avatar {
-  padding-right: 10px;
+  margin-right: 15px;
+  margin-top: 10px;
   height: 50px;
 }
 
 .tweetContext {
-  font-size: 25px; 
-  font-weight: 300;
+  font-weight: 700;
   padding: 10px;
   word-break: break-word;
 }
 
-
-
-
 #tweets-container footer {
   display: flex;
   flex-direction: row;
-  border-top: 3px solid black;
+  border-top: 3px solid #545149;
   padding: 10px;
   font-size: 15px;
 }
