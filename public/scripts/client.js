@@ -24,13 +24,9 @@
   return $tweet;
 };
 
-// const formatTime = function (date) {
-//   let createdTime = 
-//   console.log(createdTime)
-//   let timeInSeconds
-// }
-
-
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
 const renderTweets = function(tweets) {
   tweets.forEach((tweetObject) => {
     $('#tweets-container').append(createTweetElement(tweetObject));
@@ -44,43 +40,38 @@ const loadTweets = function () {
   })
 };
 
-const formValidation = function () {
-  let text = $('#tweet-text');
-  if (text.val().length > 140) {
-    $('div.error').slideDown("fast", function(){
-      $( this ).html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Too many characters, please revise!</span><i class="fas fa-exclamation-triangle"></i>')
-    });
-    text.focus()
-    return false;
-  } else if (!text.val()) {
-    $('div.error').slideDown("fast", function(){
-      $( this )
-      .html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Please enter something!!</span><i class="fas fa-exclamation-triangle"></i>')
-    });
-      text.focus();
-      return false;
-  } 
-  $('div.error').slideUp(400);
-  return true; 
-}
-
-
 
 $(document).ready(function() {
   loadTweets();
-  
+
   $('#tweetForm').submit(function (event) {
     event.preventDefault();
+    
+    //information from the server 
     let text = $('#tweet-text').val()
-    if (formValidation() === true) {
-      $.ajax( {
-          url: `/tweets`,
-          method: "POST",
-          data: { text }
-        })
-      .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')});
-     $('#tweet-text').val('');
-     $('.counter').text('140')
-    } 
+    console.log(text);
+    $.ajax( {
+        url: `/tweets`,
+        method: "POST",
+        data: { text }
+      })
+      .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')})
   });
+
+  
+  
+  const formValidation = function (text) {
+    if (text.val().length > 140) {
+        alert('Too many characters');
+        text.focus()
+        return false;
+        
+    } else if (!text) {
+        alert('Please write something before submitting')
+        return false;
+    }
+    return true; 
+}
+  
+
 });
