@@ -11,11 +11,13 @@
     
   // ---- Footer Elements ---- //
   const $footer = $('<footer>');
-        $footer.append($('<p>').addClass('date').text(tweetObject.created_at));
+      // converting the created_at (assuming its in ms) to a day
+  const dateDays = Math.floor( (tweetObject.created_at) / (60*60*60*24*1000));
+  $footer.append($('<p>').addClass('date').text(`${dateDays} days ago`));
   const $iconsDiv = $('<div>').addClass('icons');
-        $iconsDiv.append($('<i>').addClass('fas fa-flag'));
-        $iconsDiv.append($('<i>').addClass('fas fa-retweet'));
-        $iconsDiv.append($('<i>').addClass('fas fa-heart'));
+  $iconsDiv.append($('<i>').addClass('fas fa-flag'));
+  $iconsDiv.append($('<i>').addClass('fas fa-retweet'));
+  $iconsDiv.append($('<i>').addClass('fas fa-heart'));
   $footer.append($iconsDiv);
   
   $tweet.append($header); //header
@@ -23,15 +25,13 @@
   $tweet.append($footer); //footer
   return $tweet;
 };
-// const formatTime = function (date){
 
-
-// }
 const renderTweets = function(tweets) {
   tweets.forEach((tweetObject) => {
-    $('#tweets-container').append(createTweetElement(tweetObject));
+    $('#tweets-container').prepend(createTweetElement(tweetObject));
   });
-}
+};
+
 const loadTweets = function () {
   $.ajax( {
       url: '/tweets',
@@ -39,14 +39,14 @@ const loadTweets = function () {
       success: response => renderTweets(response)
   })
 };
-
+// Validating a new tweet, will return an error if invalid. 
 const formValidation = function () {
-  let text = $('#tweet-text')
+  let text = $('#tweet-text');
   if (text.val().length > 140) {
     $('div.error').slideDown("fast", function(){
-      $( this ).html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Too many characters, please revise!</span><i class="fas fa-exclamation-triangle"></i>')
+      $( this ).html('<i class="fas fa-exclamation-triangle"></i><span class="errorMsg">Too many characters, please revise!</span><i class="fas fa-exclamation-triangle"></i>');
     });
-      text.focus()
+      text.focus();
       return false;
   } else if (!text.val()) {
       $('div.error').slideDown("fast", function(){
@@ -61,9 +61,17 @@ const formValidation = function () {
 
 
 
+
 $(document).ready(function() {
   loadTweets();
 
+  // When clicked, will toggle compose new tweet container
+  $('.composeTweet').click(function(event){
+    $('.new-tweet').slideToggle("fast");
+    $('#tweet-text').focus();
+  });
+
+  // Function will submit if form validation is true and sends a POST request.
   $('#tweetForm').submit(function (event) {
     event.preventDefault();
     //information from the server 
@@ -75,9 +83,8 @@ $(document).ready(function() {
           data: { text }
         })
       .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')});
-      $('#tweet-text').val('');
-      $('.counter').text('140');
+      $('#tweet-text').val('');  //resets tweetbox
+      $('.counter').text('140'); //resets counter
       }
-      
     }); 
 });
