@@ -1,40 +1,17 @@
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
-
-
-  /* Tablet: maximum width of 1024px */
-/* @media only screen and (max-width: 420px) {
-    body {
-      padding:0;
-    }
-    nav {
-      position: static;
-      background-color: #0087b8;
-      background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
-      
-      
-    };
-    nav span {
-      font-size: 30px
-    }
-} */
-
-
 @media screen and (min-width: 768px) {
   body { 
     display: flex;
     margin: 80px 50px;
   }
-  header.profileHeader{
+  header.profileHeader {
     flex-shrink: 2;
-    /* margin-left: 50px; */
   }
-
-  header div:first-of-type{
+  header div:first-of-type {
     padding-top: 20px;
   }
-
   main.container{
     padding-left: 125px;
   }
@@ -44,7 +21,6 @@
   .tweetContext {
     margin: 10px 0;
   }
-
 }
 
 @media (max-width: 420px) {
@@ -55,26 +31,26 @@
     position: static;
     background-color: #0087b8;
     background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
-    
-  };
-  nav span {
-    font-size: 30px
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  .composeTweet {
+    margin: 0;
+  }
+  .composeTweet p {
+    font-size: 20px
+  }
+  .logo {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .profileHeader {
+    height: auto;
+    padding-bottom: 20px;
   }
   .profileHeader div img {
     width: 50vw;
   }
 }
 
-
-
-/*  */
-@media only screen and (max-width: 420px) {
-
-}
-/* @media (max-width: 768px) {
-  Write smartphone only styles here */
-
-
- /* Laptops / Desktops: minimum width of 960px */
- /* @media only screen and (min-width: 960px) {
-  Write CSS rules that target small laptop screen sizes and beyond */
