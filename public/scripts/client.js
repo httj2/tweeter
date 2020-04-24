@@ -19,19 +19,21 @@
   $iconsDiv.append($('<i>').addClass('fas fa-retweet'));
   $iconsDiv.append($('<i>').addClass('fas fa-heart'));
   $footer.append($iconsDiv);
-  
+// appending header, body and footer to the article
   $tweet.append($header); //header
   $tweet.append($userTweetDiv); //body
   $tweet.append($footer); //footer
   return $tweet;
 };
 
+// Takes in array of objects and Renders to the DOM
 const renderTweets = function(tweets) {
   tweets.forEach((tweetObject) => {
     $('#tweets-container').prepend(createTweetElement(tweetObject));
   });
 };
 
+//function will use jQuery to make a request and receive the array of tweets as JSON. Sucess will call up the renderTweets.
 const loadTweets = function () {
   $.ajax( {
       url: '/tweets',
