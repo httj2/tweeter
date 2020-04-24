@@ -1,17 +1,17 @@
- const createTweetElement = function(tweetObject) {
+const createTweetElement = function(tweetObject) {
   let $tweet = $('<article>').addClass('tweet');
   // --------Header Elements-----------//
   const $header = $(`<header>`); 
-        $header.append($(`<img src = ${tweetObject.user.avatars}>`).addClass('avatar'));
-        $header.append($(`<p>`).addClass('name').text(tweetObject.user.name));
-        $header.append($(`<p>`).addClass(`username`).text(tweetObject.user.handle));
+  $header.append($(`<img src = ${tweetObject.user.avatars}>`).addClass('avatar'));
+  $header.append($(`<p>`).addClass('name').text(tweetObject.user.name));
+  $header.append($(`<p>`).addClass(`username`).text(tweetObject.user.handle));
   // ---- Body of tweet ---//
   const $userTweetDiv = $('<div>')
-        $userTweetDiv.append($('<p>').addClass('tweetContext').text(tweetObject.content.text));
+  $userTweetDiv.append($('<p>').addClass('tweetContext').text(tweetObject.content.text));
     
   // ---- Footer Elements ---- //
   const $footer = $('<footer>');
-      // converting the created_at (assuming its in ms) to a day
+  // converting the created_at (assuming its in ms) to a day
   const dateDays = Math.floor( (tweetObject.created_at) / (60*60*60*24*1000));
   $footer.append($('<p>').addClass('date').text(`${dateDays} days ago`));
   const $iconsDiv = $('<div>').addClass('icons');
@@ -19,15 +19,17 @@
   $iconsDiv.append($('<i>').addClass('fas fa-retweet'));
   $iconsDiv.append($('<i>').addClass('fas fa-heart'));
   $footer.append($iconsDiv);
-// appending header, body and footer to the article
+  // appending header, body and footer to the article
   $tweet.append($header); //header
   $tweet.append($userTweetDiv); //body
   $tweet.append($footer); //footer
+  
   return $tweet;
 };
 
 // Takes in array of objects and Renders to the DOM
 const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
   tweets.forEach((tweetObject) => {
     $('#tweets-container').prepend(createTweetElement(tweetObject));
   });
@@ -41,6 +43,7 @@ const loadTweets = function () {
       success: response => renderTweets(response)
   })
 };
+
 // Validating a new tweet, will return an error if invalid. 
 const formValidation = function () {
   let text = $('#tweet-text');
