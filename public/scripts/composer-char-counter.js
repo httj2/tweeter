@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
-  $('textarea#tweet-text').keyup(function(){
+  $('textarea#tweet-text').on('input', function(){
     maxLength = 140;
     currentLength = this.value.length
     if (currentLength > maxLength) {
-      $('output.counter').addClass('red')
+      $('output', $(this).parent()).addClass('invalid')
     } else {
-      $('output.counter').removeClass('red')
+      $('output', $(this).parent()).removeClass('invalid')
     }
 
-    $('output.counter').val(maxLength - currentLength);
+    $('output', $(this).parent()).val(maxLength - currentLength);
 
   });
 
