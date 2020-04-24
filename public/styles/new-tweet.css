@@ -1,7 +1,8 @@
 .new-tweet {
   padding: 10px;
+  display: none;
 }
-#tweetForm{
+#tweetForm {
   margin-top:50px;
 }
 
@@ -10,18 +11,17 @@
   font-weight: 700;
   font-size: 22px;
 }
-#tweet-text{ 
+#tweet-text { 
   background: none;
   border: none;
   border-bottom: #545149 3px solid;
   resize: none; 
   width: 100%;
-  /* height: 25px; */
   font-size: 20px;
   margin-bottom: 5px;
 }
 
-.new-tweet button{
+.new-tweet button {
   background: #4056A1;
   color: #ffffff;
   font-family: 'Bungee', cursive;
@@ -31,7 +31,7 @@
   float: left;
 }
 
-.new-tweet .counter{ 
+.new-tweet .counter { 
   font-family: 'Bungee', cursive;
   font-size: 18px;
   float: right;
@@ -41,10 +41,11 @@
   color: red;
 }
 
-.error{
+.error {
   border: 3px solid red;
   padding: 10px;
   display: none;
+  text-align: center;
 }
 .errorMsg {
   padding: 0px 8px;
