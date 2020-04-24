@@ -25,10 +25,7 @@ nav {
 }
 .composeTweet{
   margin-left: auto;
-  text-align:center;
-  background: none;
-  border: none;
-  color: white;
+  text-align: center;
 }
 
 .composeTweet p{
