@@ -18,8 +18,12 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 }
 
 .profileHeader div h2{
-  background: white;
+  color: white;
   margin: 0;
   padding: 5px 10px;
+  font-weight: normal;
+}
 
+.profileHeader div h2 span{ 
+ font-weight: bold;
 }
