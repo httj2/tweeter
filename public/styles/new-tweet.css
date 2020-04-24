@@ -2,6 +2,7 @@
   padding: 10px;
   display: none;
 }
+
 #tweetForm {
   margin-top:50px;
 }
@@ -11,6 +12,7 @@
   font-weight: 700;
   font-size: 22px;
 }
+
 #tweet-text { 
   background: none;
   border: none;
@@ -47,6 +49,7 @@
   display: none;
   text-align: center;
 }
+
 .errorMsg {
   padding: 0px 8px;
 } 
