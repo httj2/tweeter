@@ -8,7 +8,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-header { 
+.profileHeader { 
   height: 400px;
   width: 100%; 
   background-color: #0087b8;
@@ -18,9 +18,12 @@ header {
   align-items: center;
 }
 
-header div h2{
-  background: white;
+.profileHeader div h2{
+  color: white;
   margin: 0;
   padding: 5px 10px;
-
+  font-weight: none;
+}
+.profoileHeader span{
+  font-weight:bold;
 }
