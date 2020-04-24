@@ -24,9 +24,13 @@
   return $tweet;
 };
 
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+// const formatTime = function (date) {
+//   let createdTime = 
+//   console.log(createdTime)
+//   let timeInSeconds
+// }
+
+
 const renderTweets = function(tweets) {
   tweets.forEach((tweetObject) => {
     $('#tweets-container').append(createTweetElement(tweetObject));
@@ -76,6 +80,7 @@ $(document).ready(function() {
         })
       .then((tweet) => {createTweetElement(tweet).prependTo('#tweets-container')});
      $('#tweet-text').val('');
+     $('.counter').text('140')
     } 
   });
 });
