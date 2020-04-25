@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Final Product
+!["Screenshot for screens that are 420px and smaller"](https://github.com/httj2/tweeter/blob/master/docs/cellphone-layout.png)
+!["Screenshot for tablet screens (421px to 767px)"](https://github.com/httj2/tweeter/blob/master/docs/tablet-layout.png)
+!["Screenshot for  desktop screens (768px and up)"](https://github.com/httj2/tweeter/blob/master/docs/desktop-layout.png)
