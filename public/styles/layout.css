@@ -40,7 +40,7 @@ main.container {
 #tweets-container .tweet:hover{
   box-shadow: 8px 8px #D2D6E5;
 }
-.tweet:hover .username {
+.tweet:hover .username, .tweet:hover .icons {
   display:block;
 }
 
@@ -88,10 +88,17 @@ footer .date {
   margin: 0;
   padding-top: 10px;
 }
-#tweets-container .icons {
+
+
+footer .icons {
+  display: none;
   margin-left: auto;
   color: #4056A1;
 }
+.icons i:hover { 
+  color: darkblue;
+}
+
 .icons i { 
   margin-right: 10px;
 }
