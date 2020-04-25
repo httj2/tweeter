@@ -27,9 +27,7 @@ body {
 main.container { 
   margin: 0px auto;
   width: 90%;
-  /* margin: 0px 5%; */
   background-color: #f4f1ec;
-
 }
 
 /* Tweet Container */
@@ -41,7 +39,7 @@ main.container {
   box-shadow: 8px 8px #D2D6E5;
 }
 .tweet:hover .username, .tweet:hover .icons {
-  display:block;
+  display:inline-block;
 }
 
 header p.username { 
@@ -50,6 +48,8 @@ header p.username {
   color:#D2D6E5;
   font-weight: bold;
 }
+
+
 article.tweet {
   border: 3px #545149 solid;
   padding: 10px;
@@ -66,8 +66,7 @@ article.tweet header{
 
 header .avatar {
   margin-right: 15px;
-  margin-top: 10px;
-  height: 50px;
+  height: 100%;
 }
 
 .tweetContext {
