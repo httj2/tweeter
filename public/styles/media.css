@@ -52,5 +52,27 @@
   .profileHeader div img {
     width: 50vw;
   }
+  .profileHeader div h2{
+    font-size: 95%;
+  }
+  .tweetContext {
+    font-size: 80%;
+    margin: 0 0 10px 0;
+  }
+  header .avatar {
+    height: 11vw;
+    margin-right: 5px;
+  }
+  p.username, p.name, p.date, div.icons{
+    font-size: 75%;
+  }
+  footer p.date{
+    padding-top: 5px;
+  }
+  br{
+    display: none;
+  }
+
+
 }
 
